@@ -56,4 +56,26 @@ In this section, we demonstrate how to use Vagrant to automatically provision a 
 
 ### Step 1: Clone this repository
 
+```bash
+   git clone https://github.com/Umer-c/centos-server-management.git
+   cd centos-server-management
+```
+
+Run vagrant up to start the VM and provision the server. This Vagrantfile configures the VM to use the jacobw/fedora35-arm64 box, sets up private and public networks, and includes a shell provisioning script. The provisioning script installs necessary packages, starts and enables the HTTPD service, downloads and deploys a website template, and restarts the HTTPD service.
+
+By using Vagrant, you can ensure that the server setup is consistent and repeatable, making it easier to manage and deploy your infrastructure.
+
+## To Test it
+
+After the server has been provisioned, you can test the setup to ensure that the HTTPD service is running and serving the website correctly.
+
+Open a web browser and navigate to the IP address configured for the private network. In this case, go to http://192.168.56.12. You should see the website served from the 2135_mini_finance template.
+
+You can also SSH into the virtual machine to verify the HTTPD service status:
+
+```bash
+vagrant ssh
+systemctl status httpd
+```
+
 
