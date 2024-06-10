@@ -22,3 +22,32 @@ First, install the required packages using `yum`:
 
 ```bash
 yum install httpd wget unzip vim -y
+```
+
+### Step 2: Start and Enable HTTPD
+
+```bash
+systemctl start httpd
+systemctl enable httpd
+```
+
+### Step 3: Download and Deploy the Website
+
+Create a temporary directory, download the website template, and deploy it to the HTTP server:
+
+```bash
+mkdir -p /tmp/finance
+cd /tmp/finance
+wget https://www.tooplate.com/zip-templates/2135_mini_finance.zip
+unzip -o 2135_mini_finance.zip
+cp -r 2135_mini_finance/* /var/www/html/
+systemctl restart httpd
+cd /tmp/
+rm -rf /tmp/finance
+```
+
+This will download a sample website template, unzip it, and copy the contents to the web server's root directory. Finally, the HTTPD service is restarted to apply the changes.
+
+## Provisioning with Vagrant
+
+
