@@ -50,4 +50,10 @@ This will download a sample website template, unzip it, and copy the contents to
 
 ## Provisioning with Vagrant
 
+Provisioning is the process of setting up the software and configuration on a virtual machine automatically. Vagrant allows you to automate the provisioning of your virtual machines using shell scripts, configuration management tools, and more.
+
+In this section, we demonstrate how to use Vagrant to automatically provision a CentOS server with the same setup as described in the manual steps.
+
+### Step 1: Clone this repository
+
 
